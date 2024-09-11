@@ -1,45 +1,49 @@
 ---
-import Link from './Link.astro'; 
+import Link from "./Link.astro";
 interface Props {
-    options: { title: string; link: string; }[];
+  options: { title: string; link: string }[];
 }
-  
+
 const { options } = Astro.props;
 ---
-  
-  <div class="topbar-container">
-    <ul>
-      {options.map((option) => (
+
+<nav class="topbar-container box">
+  <ul>
+    {
+      options.map((option) => (
         <li>
-            <a href={option.link}>{option.title}</a>
+          <a class="underline-zigzag" href={option.link}>
+            {option.title}
+          </a>
         </li>
-      ))}
-      <li>
-        <a>MJLogopedia</a>
-      </li>
-    </ul>
-  </div>
-  <style>
-    .topbar-container {
-      position: relative;
-      background-color: var(--accent-2);
-      border: 4px solid var(--border);
-      box-shadow: var(--border) 5px 5px 0px;
-      padding: 1rem;
-      border-radius: 20px;
-      max-height: 100px;
+      ))
     }
-    ul {
-      display: flex;
-      padding: 0 1rem;
-      list-style-type: none;
-      gap: 2rem;
-    }
-    li {
-      font-size: 1.5rem;
-    }
-    li:last-child {
-      margin-left: auto;
-    }
-  </style>
-  
+    <li>
+      <a>MJLogopedia</a>
+    </li>
+  </ul>
+</nav>
+<style>
+  .topbar-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: var(--topbar-padding);
+    padding: var(--topbar-padding);
+    max-height: var(--topbar-height);
+    min-width: min(calc(100vw - calc(var(--topbar-padding) * 2)), 700px);
+  }
+  ul {
+    display: flex;
+    padding: 0 1rem;
+    list-style-type: none;
+    gap: 2rem;
+  }
+  li {
+    font-size: 1.5rem;
+  }
+  li:last-child {
+    margin-left: auto;
+  }
+</style>

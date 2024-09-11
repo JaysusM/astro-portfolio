@@ -1,7 +1,6 @@
 ---
-import PhoneIcon from './Icons/Phone.astro';
-import InstagramIcon from './Icons/Instagram.astro';
-import EmailIcon from './Icons/Email.astro';
+import EmailIcon from "./Icons/Email.astro";
+import ShowcaseCard from "./ShowcaseCard.astro";
 
 interface Props {
   title: string;
@@ -11,103 +10,112 @@ interface Props {
 const { title, image } = Astro.props;
 ---
 
-<div class="profile-item">
-  <h1>{title}</h1>
-  <h3>Logopedia y atención temprana</h3>
-  <img src={image} />
-  <div class="social-links-container">
-    <PhoneIcon color="var(--text)" />
-    <div class="social-link-href">
-      <a href="tel:+1234567890">123-456-7890</a>
+<main class="profile-container">
+  <div class="showcase-left">
+    <ShowcaseCard />
+  </div>
+  <div class="profile-info box">
+    <img src={image} />
+    <div class="profile-info-text">
+      <h3>{title}</h3>
+      <div class="profile-info-action">
+        <a href="mailto:mariaortizjimenez1999.9@gmail.com">
+          <img src="/email.png" />
+        </a>
+      </div>
     </div>
-    <InstagramIcon color="var(--text)" />
-    <div class="social-link-href">
-      <a href="https://instagram.com/test">
-        @mj_logopedia
-      </a>
-    </div>
-    <EmailIcon color="var(--text)" />
-    <div class="social-link-href">
-      <a href="mailto:test@test.com">
-        m.ortiz_logo@gmail.com
-      </a>
+    <div class="profile-info-text">
+      <h3>Logopeda especialista en Atención Temprana y Terapia Miofuncional</h3>
     </div>
   </div>
-</div>
+  <div class="showcase-right">
+    <ShowcaseCard />
+  </div>
+</main>
 
 <style>
-  .profile-item {
-    position: relative;
-    overflow: hidden;
-    grid-row: span 2;
-    max-height: 650px;
-    background-color: var(--accent);
-    height: 100%;
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    min-height: calc(var(--section-height) - 10vh);
+    max-height: calc(var(--section-height) - 10vh);
+    justify-content: center;
+    align-items: center;
+  }
+  .showcase-[left|right] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 25px;
-    border: 4px solid var(--border);
-    box-shadow: var(--border) 4px 4px 0px;
-    padding: 1rem;
   }
-  .profile-item img {
-    width: 250px;
-    border: 4px solid var(--border);
-    border-radius: 15px;
-    box-shadow: var(--border) 4px 4px 0px;
-  }
-  .profile-item h1 {
-    margin-top: 1rem;
-    font-size: 2rem;
-    font-weight: 200;
-    margin-bottom: 0.5rem;
-  }
-  .profile-item h3 {
-    font-size: 1.1rem;
-    font-weight: 200;
-    margin-bottom: 1.5rem;
-  }
-  .profile-item .social-links-container {
-    margin-top: 1.5rem;
-    max-width: 500px;
-    display: grid;
-    grid-template-columns: 24px 1fr;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  .profile-item .social-links-container .social-link-href {
+  .profile-container .profile-name {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
-  .profile-item .social-links-container a {    
-    text-decoration: none;
-    text-align: center;
+  .profile-container h1 {
+    margin-top: 1rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    font-variant: petite-caps;
   }
-  h1 {
-    font-size: 1.5rem;
-    margin: 0;
+  .profile-container .profile-info {
+    max-width: min(25vw, 400px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2rem;
   }
-  .profile-item::before, .profile-item::after {
-    content: "";
-    position: absolute;
-    background-image: url("/doodle.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.2;
+  .profile-container .profile-info img {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: calc(var(--div-height) * 0.7);
+    border-top-left-radius: calc(var(--border-radius) - 4px);
+    border-top-right-radius: calc(var(--border-radius) - 4px);
+    object-fit: cover;
   }
-  .profile-item::after {
-    width: 200px;
-    height: 200px;
-    bottom: -50px;
-    right: -50px;
-  }
-  .profile-item::before {
-    width: 200px;
-    height: 200px;
-    top: -50px;
-    left: -50px;
+  .profile-container .profile-info > .profile-info-text {
+    border-top: 4px solid var(--border);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
   }
 
+  .profile-container .profile-info > div:not(:first-of-type) {
+    padding: 0.5rem;
+  }
+
+  .profile-container .profile-info > .profile-info-text > h3 {
+    margin-right: auto;
+  }
+
+  .profile-container .profile-info > .profile-info-text > .profile-info-action {
+    border-left: 4px solid var(--border);
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-container
+    .profile-info
+    > .profile-info-text
+    > .profile-info-action
+    > a {
+    display: flex;
+  }
+
+  .profile-container
+    .profile-info
+    > .profile-info-text
+    > .profile-info-action
+    > a
+    > img {
+    width: 2rem;
+    height: 2rem;
+  }
 </style>
