@@ -1,0 +1,81 @@
+---
+import "@fontsource/manrope";
+import "@fontsource/playfair-display";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <img class="toys-bg" src="/toys.svg"/>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --main: #f9c44a;
+    --text: black;
+    --border: black;
+    --accent: white;
+    --accent-2: white;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: var(--main);
+    color: var(--text);
+    font-family: "playfair display", sans-serif;
+    padding: 3rem;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+  a:link, a:visited {
+    color: var(--text);
+    text-decoration: none;
+  }
+  body {
+    max-width: 2000px;
+  }
+  a:link, a:visited {
+    --underline-size: .15em;
+    line-height: 1.1em;
+    padding-bottom: calc(2.1*var(--underline-size));
+    background: conic-gradient(from 135deg at top   ,var(--text) 90deg,#0000 0) left 0 bottom var(--underline-size)/calc(2*var(--underline-size)) var(--underline-size) repeat-x, conic-gradient(from -45deg at bottom,var(--text) 90deg,#0000 0) bottom 0 left var(--underline-size)/calc(2*var(--underline-size)) var(--underline-size) repeat-x;
+    --mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) 50%/var(--position,0%) padding-box no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    transition: .5s;
+  }
+  a:link:hover, a:visited:hover {
+      --position: 100%;
+  }
+  .toys-bg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    z-index: -1;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      padding: 2rem;
+    }
+  }
+</style>

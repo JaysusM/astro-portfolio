@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Profile from "../components/Profile.astro";
+import Card from "../components/Card.astro";
+import Topbar from "../components/Topbar.astro";
+---
+
+<Layout title="MJLogopedia">
+  <Topbar  options={[
+    { title: "Inicio", link: "#" },
+    { title: "Servicios", link: "#" },
+    { title: "Contacto", link: "#" },
+  ]} />
+  <div class="grid-layout">
+    <Profile class="profile-item" title="María Ortiz Jiménez" image="/profile.png" />
+    <Card title="Card 1" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero at metus lacinia lacinia." />
+    <Card title="Card 2" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero at metus lacinia lacinia." />
+    <Card title="Card 3" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero at metus lacinia lacinia." />
+    <Card title="Card 4" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero at metus lacinia lacinia." />
+  </div>
+</Layout>
+<style>
+  .grid-layout {
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+</style>
+  

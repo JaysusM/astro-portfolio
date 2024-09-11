@@ -1,0 +1,113 @@
+---
+import PhoneIcon from './Icons/Phone.astro';
+import InstagramIcon from './Icons/Instagram.astro';
+import EmailIcon from './Icons/Email.astro';
+
+interface Props {
+  title: string;
+  image: string;
+}
+
+const { title, image } = Astro.props;
+---
+
+<div class="profile-item">
+  <h1>{title}</h1>
+  <h3>Logopedia y atención temprana</h3>
+  <img src={image} />
+  <div class="social-links-container">
+    <PhoneIcon color="var(--text)" />
+    <div class="social-link-href">
+      <a href="tel:+1234567890">123-456-7890</a>
+    </div>
+    <InstagramIcon color="var(--text)" />
+    <div class="social-link-href">
+      <a href="https://instagram.com/test">
+        @mj_logopedia
+      </a>
+    </div>
+    <EmailIcon color="var(--text)" />
+    <div class="social-link-href">
+      <a href="mailto:test@test.com">
+        m.ortiz_logo@gmail.com
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .profile-item {
+    position: relative;
+    overflow: hidden;
+    grid-row: span 2;
+    max-height: 650px;
+    background-color: var(--accent);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    border: 4px solid var(--border);
+    box-shadow: var(--border) 4px 4px 0px;
+    padding: 1rem;
+  }
+  .profile-item img {
+    width: 250px;
+    border: 4px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--border) 4px 4px 0px;
+  }
+  .profile-item h1 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 200;
+    margin-bottom: 0.5rem;
+  }
+  .profile-item h3 {
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin-bottom: 1.5rem;
+  }
+  .profile-item .social-links-container {
+    margin-top: 1.5rem;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .profile-item .social-links-container .social-link-href {
+    display: flex;
+    justify-content: center;
+  }
+  .profile-item .social-links-container a {    
+    text-decoration: none;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .profile-item::before, .profile-item::after {
+    content: "";
+    position: absolute;
+    background-image: url("/doodle.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+  }
+  .profile-item::after {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+  }
+  .profile-item::before {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: -50px;
+  }
+
+</style>
