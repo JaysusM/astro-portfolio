@@ -1,23 +1,16 @@
 ---
-import EmailIcon from "./Icons/Email.astro";
 import ShowcaseCard from "./ShowcaseCard.astro";
-
-interface Props {
-  title: string;
-  image: string;
-}
-
-const { title, image } = Astro.props;
+import { profile, education, courses } from "../information.json";
 ---
 
-<main class="profile-container">
+<main class="profile-container" id="profile">
   <div class="showcase-left">
-    <ShowcaseCard />
+    <ShowcaseCard entries={education.entries} title={education.title}/>
   </div>
   <div class="profile-info box">
-    <img src={image} />
+    <img src={profile.image} />
     <div class="profile-info-text">
-      <h3>{title}</h3>
+      <h3>{profile.name}</h3>
       <div class="profile-info-action">
         <a href="mailto:mariaortizjimenez1999.9@gmail.com">
           <img src="/email.png" />
@@ -25,11 +18,14 @@ const { title, image } = Astro.props;
       </div>
     </div>
     <div class="profile-info-text">
-      <h3>Logopeda especialista en Atención Temprana y Terapia Miofuncional</h3>
+      <h3>{profile.description}</h3>
     </div>
   </div>
   <div class="showcase-right">
-    <ShowcaseCard />
+    <ShowcaseCard entries={courses.entries} title={courses.title} />
+  </div>
+  <div class="showcase-simple">
+    <ShowcaseCard fullScreen={true} entries={[...education.entries, ...courses.entries]} title={education.title} />
   </div>
 </main>
 
@@ -38,8 +34,8 @@ const { title, image } = Astro.props;
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    min-height: calc(var(--section-height) - 10vh);
-    max-height: calc(var(--section-height) - 10vh);
+    min-height: var(--section-height);
+    max-height: var(--section-height);
     justify-content: center;
     align-items: center;
   }
@@ -47,6 +43,9 @@ const { title, image } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .showcase-simple {
+    display: none;
   }
   .profile-container .profile-name {
     display: flex;
@@ -70,7 +69,7 @@ const { title, image } = Astro.props;
   .profile-container .profile-info img {
     max-width: 100%;
     min-width: 100%;
-    max-height: calc(var(--div-height) * 0.7);
+    max-height: calc(var(--section-height) * 0.7);
     border-top-left-radius: calc(var(--border-radius) - 4px);
     border-top-right-radius: calc(var(--border-radius) - 4px);
     object-fit: cover;
@@ -90,7 +89,8 @@ const { title, image } = Astro.props;
   }
 
   .profile-container .profile-info > .profile-info-text > h3 {
-    margin-right: auto;
+    text-align: center;    
+    margin: 0 auto;
   }
 
   .profile-container .profile-info > .profile-info-text > .profile-info-action {
@@ -117,5 +117,34 @@ const { title, image } = Astro.props;
     > img {
     width: 2rem;
     height: 2rem;
+  }
+
+  @media (width <= 1300px) {
+    .profile-container {
+      flex-direction: column;
+      gap: 3rem;
+      justify-content: flex-start;
+      max-height: unset;
+      min-height: unset;
+    }
+
+    .profile-container .profile-info {
+      max-width: var(--small-screen-section-width);
+      min-width: var(--small-screen-section-width);
+    }
+
+    .profile-container .profile-info img {
+      max-height: calc(var(--section-height) * 0.4);
+    }
+
+    .showcase-left, .showcase-right {
+      display: none;
+    }
+
+    .showcase-simple {
+      display: block;
+      min-width: var(--small-screen-section-width);
+      max-width: var(--small-screen-section-width);
+    }
   }
 </style>

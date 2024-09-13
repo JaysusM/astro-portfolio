@@ -1,31 +1,26 @@
 ---
 import Card from "./Card.astro";
+import { services } from "../information.json";
 ---
 
-<section class="service-container">
-  <Card
-    title="Miofuncional"
-    description="La terapia miofuncional es una disciplina que se encarga de la prevención, diagnóstico y tratamiento de las alteraciones de la motricidad orofacial."
-    image="/service_example.jpg"
-  />
-  <Card
-    title="Atención Temprana"
-    description="La atención temprana es un conjunto de intervenciones dirigidas a la población infantil de 0 a 6 años, a la familia y al entorno, que tienen por objetivo dar respuesta a las necesidades transitorias o permanentes que presentan los niños con trastornos en su desarrollo o que tienen el riesgo de padecerlos."
-    image="/service_example.jpg"
-  />
-  <Card
-    title="Logopedia"
-    description="La logopedia es una disciplina que se encarga de la prevención, evaluación, diagnóstico y tratamiento de los trastornos de la comunicación humana, manifestados a través de patologías y alteraciones en la voz, el habla, el lenguaje (oral, escrito y gestual), la audición y las funciones orofaciales."
-    image="/service_example.jpg"
-  />
+<section class="service-container" id="services">
+  {
+    services.entries.map((service) => (
+      <Card
+        title={service.title}
+        description={service.description}
+        image={service.image}
+      />
+    ))
+  }
 </section>
 <style>
   .service-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
-    min-height: calc(var(--section-height) - 10vh);
-    max-height: calc(var(--section-height) - 10vh);
+    min-height: var(--section-height);
+    max-height: var(--section-height)
   }
   .service-container img {
     padding-top: 1rem;
@@ -33,5 +28,16 @@ import Card from "./Card.astro";
     min-width: 100%;
     max-height: calc(var(--section-height) * 0.7);
     object-fit: cover;
+  }
+
+  @media (width <= 1300px) {
+    .service-container {
+      display: flex;
+      flex-direction: column;
+      max-width: var(--small-screen-section-width);
+      max-height: unset;
+      min-height: unset;
+      margin: 0 auto;
+    }
   }
 </style>

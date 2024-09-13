@@ -9,7 +9,7 @@ import Services from "../components/Services.astro";
   <Topbar
     options={[
       { title: "Inicio", link: "#" },
-      { title: "Servicios", link: "#" },
+      { title: "Servicios", link: "#services" },
       { title: "Contacto", link: "#" },
     ]}
   />
@@ -29,5 +29,11 @@ import Services from "../components/Services.astro";
     gap: 5rem 10rem;
     max-width: min(2000px, 90vw);
     margin: 0 auto;
+  }
+
+  @media (width <= 1300px) {
+    .section-wrapper {
+      gap: 3rem;
+    }
   }
 </style>

@@ -1,32 +1,41 @@
 ---
+interface Props {
+    title: string;
+    entries: { title: string; description: string }[];
+    fullScreen?: boolean;
+}
 
+const { title, entries, fullScreen } = Astro.props;
 ---
 
-<aside class="showcase-container box">
-  <h3>Educación</h3>
-  <div class="showcase-entry">
-    <h4>Grado en Logopedia</h4>
-    <p>Universidad de Málaga - 2017-2021</p>
-  </div>
-  <div class="showcase-entry">
-    <h4>Máster en Atención Temprana</h4>
-    <p>Universidad de Málaga - 2021-2022</p>
-  </div>
-  <div class="showcase-entry">
-    <h4>Máster en Terapia Miofuncional</h4>
-    <p>Universidad de Málaga - 2022-2023</p>
-  </div>
+<aside class={fullScreen ? "showcase-container showcase-full box" : "showcase-container box"}>
+  <h3>{title}</h3>
+    {
+        entries.map((entry) => (
+        <div class="showcase-entry">
+            <h4>{entry.title}</h4>
+            <p>{entry.description}</p>
+        </div>
+        ))
+    }
 </aside>
 <style>
   .showcase-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: min(25vw, 400px);
+    min-width: min(25vw, 400px);
+  }
+  .showcase-container.showcase-full {
+    max-width: 100%;
+    min-width: 100%;
   }
   .showcase-container h3 {
     font-size: 2rem;
     font-weight: 200;
     font-variant: petite-caps;
+    text-align: center;
   }
   .showcase-container .showcase-entry {
     display: flex;
@@ -36,6 +45,7 @@
     border-top: 4px solid var(--border);
     width: 100%;
     max-width: 600px;
+    text-align: center; 
   }
   .showcase-container .showcase-entry h4 {
     font-size: 1.25rem;
@@ -43,5 +53,11 @@
   }
   .showcase-container .showcase-entry p {
     margin: 0;
+  }
+
+  @media (width <= 1300px) {
+    .showcase-entry p {
+        display: none;
+    }
   }
 </style>

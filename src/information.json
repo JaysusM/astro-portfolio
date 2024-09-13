@@ -1,0 +1,61 @@
+{
+  "profile": {
+    "name": "María Ortiz Jiménez",
+    "description": "Logopeda especializada en terapia miofuncional y atención temprana",
+    "image": "/profile.png"
+  },
+  "education": {
+    "title": "Educación",
+    "entries": [
+      {
+        "title": "Grado en Logopedia",
+        "description": "Universidad de Málaga - 2017-2021"
+      },
+      {
+        "title": "Máster en Atención Temprana",
+        "description": "Universidad de Málaga - 2021-2022"
+      },
+      {
+        "title": "Máster en Terapia Miofuncional",
+        "description": "Universidad de Málaga - 2022-2023"
+      }
+    ]
+  },
+  "courses": {
+    "title": "Cursos",
+    "entries": [
+      {
+        "title": "Curso de Introducción a la Terapia Miofuncional",
+        "description": "Universidad de Málaga - 2021"
+      },
+      {
+        "title": "Curso de Introducción a la Atención Temprana",
+        "description": "Universidad de Málaga - 2022"
+      },
+      {
+        "title": "Curso de Introducción a la Logopedia",
+        "description": "Universidad de Málaga - 2023"
+      }
+    ]
+  },
+  "services": {
+    "title": "Servicios",
+    "entries": [
+      {
+        "title": "Logopedia",
+        "description": "La terapia miofuncional es una disciplina que se encarga de la prevención, diagnóstico y tratamiento de las alteraciones de la motricidad orofacial.",
+        "image": "/service_example.jpg"
+      },
+      {
+        "title": "Atención Temprana",
+        "description": "La atención temprana es un conjunto de intervenciones dirigidas a la población infantil de 0 a 6 años, a la familia y al entorno, que tienen por objetivo dar respuesta a las necesidades transitorias o permanentes que presentan los niños con trastornos en su desarrollo o que tienen el riesgo de padecerlos.",
+        "image": "/service_example.jpg"
+      },
+      {
+        "title": "Terapia Miofuncional",
+        "description": "La logopedia es una disciplina que se encarga de la prevención, evaluación, diagnóstico y tratamiento de los trastornos de la comunicación humana, manifestados a través de patologías y alteraciones en la voz, el habla, el lenguaje (oral, escrito y gestual), la audición y las funciones orofaciales.",
+        "image": "/service_example.jpg"
+      }
+    ]
+  }
+}

@@ -1,5 +1,4 @@
 ---
-import Link from "./Link.astro";
 interface Props {
   options: { title: string; link: string }[];
 }
@@ -33,6 +32,7 @@ const { options } = Astro.props;
     padding: var(--topbar-padding);
     max-height: var(--topbar-height);
     min-width: min(calc(100vw - calc(var(--topbar-padding) * 2)), 700px);
+    overflow: hidden;
   }
   ul {
     display: flex;
@@ -45,5 +45,11 @@ const { options } = Astro.props;
   }
   li:last-child {
     margin-left: auto;
+  }
+
+  @media (width <= 780px) {
+    .topbar-container {
+      display: none;
+    }
   }
 </style>
