@@ -2,7 +2,6 @@
 import Card from "./Card.astro";
 import { services } from "../information.json";
 ---
-
 <section class="service-container" id="services">
   {
     services.entries.map((service) => (
@@ -19,8 +18,9 @@ import { services } from "../information.json";
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
-    min-height: var(--section-height);
-    max-height: var(--section-height)
+    min-height: calc(var(--section-height) * 0.8);
+    max-height: calc(var(--section-height) * 0.8);
+    margin-bottom: 3rem;
   }
   .service-container img {
     padding-top: 1rem;
@@ -38,6 +38,12 @@ import { services } from "../information.json";
       max-height: unset;
       min-height: unset;
       margin: 0 auto;
+    }
+  }
+
+  @media (width >= 2000px) {
+    .service-container {
+      max-height: var(--section-height);
     }
   }
 </style>

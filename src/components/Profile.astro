@@ -9,11 +9,23 @@ import { profile, education, courses } from "../information.json";
   </div>
   <div class="profile-info box">
     <img src={profile.image} />
-    <div class="profile-info-text">
+    <div class="profile-info-text profile-info-main">
       <h3>{profile.name}</h3>
-      <div class="profile-info-action">
-        <a href="mailto:mariaortizjimenez1999.9@gmail.com">
+    </div>
+    <div class="profile-info-actions">
+      <div class="profile-info-text">
+        <a href={`tel:${profile.phone}`}>
+          <img src="/phone.png" />
+        </a>
+      </div>
+      <div class="profile-info-text">
+        <a href = {`mailto:${profile.email}`}>
           <img src="/email.png" />
+        </a>
+      </div>
+      <div class="profile-info-text">
+        <a href={profile.instagram}>
+          <img src="/instagram.png" />
         </a>
       </div>
     </div>
@@ -23,9 +35,6 @@ import { profile, education, courses } from "../information.json";
   </div>
   <div class="showcase-right">
     <ShowcaseCard entries={courses.entries} title={courses.title} />
-  </div>
-  <div class="showcase-simple">
-    <ShowcaseCard fullScreen={true} entries={[...education.entries, ...courses.entries]} title={education.title} />
   </div>
 </main>
 
@@ -44,14 +53,23 @@ import { profile, education, courses } from "../information.json";
     flex-direction: column;
     align-items: center;
   }
-  .showcase-simple {
-    display: none;
-  }
   .profile-container .profile-name {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .profile-info .profile-info-actions {
+    display: flex;
+    flex-direction: row;
+    border-top: 4px solid var(--border);
+    width: 100%;
+    padding: 5px 0 0 0 !important;
+    justify-content: space-evenly;
+  }
+  .profile-info .profile-info-actions img {
+    width: 3rem;
+    height: 3rem;
   }
   .profile-container h1 {
     margin-top: 1rem;
@@ -83,6 +101,13 @@ import { profile, education, courses } from "../information.json";
     align-items: center;
     padding: 0 0.5rem;
   }
+  .profile-container .profile-info > .profile-info-main > h3 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    font-variant: petite-caps;
+    text-align: center;
+    padding: 0.75rem 0;
+  }
 
   .profile-container .profile-info > div:not(:first-of-type) {
     padding: 0.5rem;
@@ -91,22 +116,6 @@ import { profile, education, courses } from "../information.json";
   .profile-container .profile-info > .profile-info-text > h3 {
     text-align: center;    
     margin: 0 auto;
-  }
-
-  .profile-container .profile-info > .profile-info-text > .profile-info-action {
-    border-left: 4px solid var(--border);
-    padding: 0.5rem 0 0.5rem 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .profile-container
-    .profile-info
-    > .profile-info-text
-    > .profile-info-action
-    > a {
-    display: flex;
   }
 
   .profile-container
@@ -133,18 +142,18 @@ import { profile, education, courses } from "../information.json";
       min-width: var(--small-screen-section-width);
     }
 
+    .profile-info .profile-info-main {
+      order: -1;
+      border-top: none !important;
+      border-bottom: 4px solid var(--border);
+    }
+
     .profile-container .profile-info img {
       max-height: calc(var(--section-height) * 0.4);
     }
 
     .showcase-left, .showcase-right {
       display: none;
-    }
-
-    .showcase-simple {
-      display: block;
-      min-width: var(--small-screen-section-width);
-      max-width: var(--small-screen-section-width);
     }
   }
 </style>

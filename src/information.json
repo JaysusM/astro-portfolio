@@ -2,7 +2,10 @@
   "profile": {
     "name": "María Ortiz Jiménez",
     "description": "Logopeda especializada en terapia miofuncional y atención temprana",
-    "image": "/profile.png"
+    "image": "/profile.png",
+    "phone": "+34 123 456 789",
+    "email": "fake-email@gmail.com",
+    "instagram": "https://www.instagram.com/fake-instagram"
   },
   "education": {
     "title": "Educación",
