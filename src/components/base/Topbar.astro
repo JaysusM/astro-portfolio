@@ -1,0 +1,100 @@
+---
+interface Props {
+  options: { title: string; link: string }[];
+}
+
+const { options } = Astro.props;
+---
+
+<nav class="topbar-wrapper">
+  <div class="topbar-container">
+    <div class="logo">
+      <div class="circle-logo-placeholder"></div>
+      <a href="/"> MJLogopedia </a>
+    </div>
+    <ul>
+      {
+        options.map((option) => (
+          <li>
+            <a href={option.link}>{option.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .topbar-wrapper {
+    width: 100%;
+    height: var(--topbar-height);
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .topbar-container {
+    width: 100%;
+    max-width: min(var(--max-width), 90vw);
+    height: var(--topbar-height);
+    padding: var(--topbar-padding);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .logo > .circle-logo-placeholder {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    margin-right: 0.75rem;
+  }
+  .topbar-container ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin-left: auto;
+  }
+  .topbar-container ul li {
+    margin-right: 1rem;
+  }
+  .topbar-container a {
+    text-decoration: none;
+    color: var(--text);
+  }
+  /** underline drawing animation on hover */
+  .topbar-container ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--text);
+    transition: width 0.3s;
+  }
+  .topbar-container ul li a:hover::after {
+    width: 100%;
+  }
+
+  @media (width <= 768px) {
+    .topbar-container {
+      padding: 1rem;
+    }
+    .logo > .circle-logo-placeholder {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    .topbar-container ul li {
+      margin-right: 0.5rem;
+    }
+  }
+</style>

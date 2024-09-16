@@ -1,49 +1,46 @@
 ---
-import Card from "./Card.astro";
 import { services } from "../information.json";
+import Card from "./base/Card.astro";
 ---
-<section class="service-container" id="services">
-  {
-    services.entries.map((service) => (
-      <Card
-        title={service.title}
-        description={service.description}
-        image={service.image}
-      />
-    ))
-  }
+
+<section class="services-wrapper" id="services">
+  <h1>{services.title}</h1>
+  <div class="services-container">
+    {
+      services.entries.map((service) => (
+        <Card
+          title={service.title}
+          description={service.description}
+          titleSize="md"
+        >
+          <img src={service.image} />
+        </Card>
+      ))
+    }
+  </div>
 </section>
 <style>
-  .service-container {
+  h1 {
+    font-size: 2rem;
+    margin-left: 0.5rem;
+  }
+  .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    min-height: calc(var(--section-height) * 0.8);
-    max-height: calc(var(--section-height) * 0.8);
-    margin-bottom: 3rem;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 0;
   }
-  .service-container img {
-    padding-top: 1rem;
+  .services-container img {
+    margin-top: auto;
     max-width: 100%;
-    min-width: 100%;
-    max-height: calc(var(--section-height) * 0.7);
+    max-height: 100%;
     object-fit: cover;
+    border-radius: var(--border-radius);
   }
 
-  @media (width <= 1300px) {
-    .service-container {
-      display: flex;
-      flex-direction: column;
-      max-width: var(--small-screen-section-width);
-      max-height: unset;
-      min-height: unset;
-      margin: 0 auto;
-    }
-  }
-
-  @media (width >= 2000px) {
-    .service-container {
-      max-height: var(--section-height);
+  @media (width <= 768px) {
+    .services-container {
+      grid-template-columns: 1fr;
     }
   }
 </style>

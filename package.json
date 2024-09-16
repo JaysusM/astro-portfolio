@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "@fontsource/manrope": "^5.0.21",
-    "@fontsource/playfair-display": "^5.0.26",
-    "@fontsource/reem-kufi": "^5.0.20",
+    "@fontsource/poppins": "^5.1.0",
     "astro": "^4.15.2"
   },
   "devDependencies": {

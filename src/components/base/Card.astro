@@ -1,0 +1,53 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  titleSize?: "md" | "lg";
+}
+
+const { title, description, titleSize = "lg" } = Astro.props;
+const showTitle = !!title || !!description;
+---
+
+<div class="card-item border-shadow">
+  {
+    showTitle && (
+      <div class="card-item-text">
+        {title && titleSize == "lg" && <h1>{title}</h1>}
+        {title && titleSize == "md" && <h2>{title}</h2>}
+        {description && <p>{description}</p>}
+      </div>
+    )
+  }
+  <slot />
+</div>
+<style>
+  .card-item {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100vw - 4rem);
+  }
+
+  .card-item-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .card-item-text h1,
+  .card-item-text h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (width <= 768px) {
+    .card-item {
+      padding: 1rem 1.5rem;
+      min-width: calc(100vw - 4rem);
+    }
+  }
+</style>

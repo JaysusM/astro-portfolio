@@ -1,0 +1,45 @@
+---
+import Button from "./base/Button.astro";
+import { profile } from "../information.json";
+---
+
+<h2 class="social-links-title">{profile.contact.title}</h2>
+<div class="social-links">
+  <Button>
+    <a href={profile.contact.instagram}>
+      <img src="/instagram.png" class="image-icon" />
+    </a>
+  </Button>
+  <Button>
+    <a href={`tel:${profile.contact.phone}`}>
+      <img src="/phone.png" class="image-icon" />
+    </a>
+  </Button>
+  <Button>
+    <a href={`mailto:${profile.contact.email}`}>
+      <img src="/gmail.png" class="image-icon" />
+    </a>
+  </Button>
+</div>
+<style>
+  .social-links-title {
+    padding: 1rem 0 0.5rem 0;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+  }
+
+  .social-links .image-icon {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.75rem;
+    vertical-align: middle;
+  }
+
+  h2 {
+    text-align: center;
+  }
+</style>

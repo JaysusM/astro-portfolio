@@ -1,11 +1,14 @@
 {
   "profile": {
     "name": "María Ortiz Jiménez",
-    "description": "Logopeda especializada en terapia miofuncional y atención temprana",
-    "image": "/profile.png",
-    "phone": "+34 123 456 789",
-    "email": "fake-email@gmail.com",
-    "instagram": "https://www.instagram.com/fake-instagram"
+    "description": "Logopeda especializada en terapia miofuncional y atención temprana. Apasionada por la comunicación y el desarrollo infantil. Graduada en la Universidad de Málaga.",
+    "contact": {
+      "title": "¿Alguna consulta? ¿Hablamos?",
+      "phone": "+34 123 456 789",
+      "email": "fake-email@gmail.com",
+      "instagram": "https://www.instagram.com/fake-instagram"
+    },
+    "image": "/profile.png"
   },
   "education": {
     "title": "Educación",
@@ -42,7 +45,7 @@
     ]
   },
   "services": {
-    "title": "Servicios",
+    "title": "¿Qué servicios ofrezco?",
     "entries": [
       {
         "title": "Logopedia",

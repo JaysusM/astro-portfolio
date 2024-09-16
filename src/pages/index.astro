@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Topbar from "../components/base/Topbar.astro";
 import Profile from "../components/Profile.astro";
-import Topbar from "../components/Topbar.astro";
 import Services from "../components/Services.astro";
 ---
 
@@ -12,27 +12,22 @@ import Services from "../components/Services.astro";
       { title: "Servicios", link: "#services" },
     ]}
   />
-  <div class="section-wrapper">
-    <Profile
-      class="profile-item"
-      title="María Ortiz Jiménez"
-      image="/profile.png"
-    />
-    <Services class="services-item" />
-  </div>
+  <main class="information-wrapper">
+    <Profile />
+    <div class="services">
+      <Services />
+    </div>
+  </main>
 </Layout>
 <style>
-  .section-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem 10rem;
-    max-width: min(2000px, 90vw);
-    margin: 0 auto;
+  .information-wrapper {
+    display: grid;
+    padding: 1rem 2rem 2rem 2rem;
+    grid-template-columns: 5fr 3fr;
+    gap: 2rem;
+    margin-top: var(--topbar-height);
   }
-
-  @media (width <= 1300px) {
-    .section-wrapper {
-      gap: 3rem;
-    }
+  .services {
+    grid-column: 1 / -1;
   }
 </style>
