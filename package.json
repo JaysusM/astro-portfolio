@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/manrope": "^5.0.21",
     "@fontsource/poppins": "^5.1.0",
     "astro": "^4.15.2"
   },
