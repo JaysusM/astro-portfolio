@@ -6,17 +6,17 @@ import { profile } from "../information.json";
 <h2 class="social-links-title">{profile.contact.title}</h2>
 <div class="social-links">
   <Button>
-    <a href={profile.contact.instagram}>
+    <a href={profile.contact.instagram} target="_blank">
       <img src="/instagram.png" class="image-icon" />
     </a>
   </Button>
   <Button>
-    <a href={`tel:${profile.contact.phone}`}>
+    <a href={`tel:${profile.contact.phone}`} target="_blank">
       <img src="/phone.png" class="image-icon" />
     </a>
   </Button>
   <Button>
-    <a href={`mailto:${profile.contact.email}`}>
+    <a href={`mailto:${profile.contact.email}`} target="_blank">
       <img src="/gmail.png" class="image-icon" />
     </a>
   </Button>
