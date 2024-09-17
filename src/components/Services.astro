@@ -13,7 +13,7 @@ import Card from "./base/Card.astro";
           description={service.description}
           titleSize="md"
         >
-          <img src={service.image} />
+          <img class="service-image" src={service.image} />
         </Card>
       ))
     }
@@ -30,12 +30,20 @@ import Card from "./base/Card.astro";
     grid-template-columns: repeat(3, 1fr);
     padding: 2rem 0;
   }
-  .services-container img {
+  .services-container img.service-image {
     margin-top: auto;
     max-width: 100%;
+    min-width: 100%;
     max-height: 100%;
     object-fit: cover;
     border-radius: var(--border-radius);
+    margin-bottom: -1.5rem;
+  }
+
+  @media (768px <= width <= 1500px) {
+    .services-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (width <= 768px) {

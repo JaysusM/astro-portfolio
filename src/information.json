@@ -1,46 +1,54 @@
 {
   "profile": {
     "name": "María Ortiz Jiménez",
-    "description": "Logopeda especializada en terapia miofuncional y atención temprana. Apasionada por la comunicación y el desarrollo infantil. Graduada en la Universidad de Málaga.",
+    "description": "Logopeda especializada en terapia miofuncional y atención temprana. Apasionada por la comunicación y el desarrollo infantil.",
     "contact": {
       "title": "¿Alguna consulta? ¿Hablamos?",
-      "phone": "+34 123 456 789",
-      "email": "fake-email@gmail.com",
-      "instagram": "https://www.instagram.com/fake-instagram"
+      "phone": "+34 634550185",
+      "email": "mariaortizlogopeda@gmail.com",
+      "instagram": "https://www.instagram.com/mj_logopedia"
     },
     "image": "/profile.png"
   },
   "education": {
-    "title": "Educación",
+    "title": "🎓 Educación",
     "entries": [
       {
         "title": "Grado en Logopedia",
-        "description": "Universidad de Málaga - 2017-2021"
-      },
-      {
-        "title": "Máster en Atención Temprana",
-        "description": "Universidad de Málaga - 2021-2022"
+        "description": "Universidad de Málaga (2017-2021)"
       },
       {
         "title": "Máster en Terapia Miofuncional",
-        "description": "Universidad de Málaga - 2022-2023"
+        "description": "Universidad Alfonso X El Sabio (2021-2022)"
+      },
+      {
+        "title": "Máster en Atención Temprana",
+        "description": "UNIR (2022-2023)"
+      },
+      {
+        "title": "Especialización en Disfagia Neonatal",
+        "description": "Academia Española de Logopedia en Neonatos y Lactantes (2024)"
+      },
+      {
+        "title": "Especialización en Asesoría de Lactancia",
+        "description": "Asociación Española de Logopedia en Neonatos y Lactantes (2024)"
       }
     ]
   },
   "courses": {
-    "title": "Cursos",
+    "title": "📚 Cursos",
     "entries": [
       {
-        "title": "Curso de Introducción a la Terapia Miofuncional",
-        "description": "Universidad de Málaga - 2021"
+        "title": "Curso en Deglución Atípica",
+        "description": "Scire Formación (2021)"
       },
       {
-        "title": "Curso de Introducción a la Atención Temprana",
-        "description": "Universidad de Málaga - 2022"
+        "title": "Curso en Intervención Logopédica en Laringectamizados Totales Y Parciales",
+        "description": "Scire Formación (2021)"
       },
       {
-        "title": "Curso de Introducción a la Logopedia",
-        "description": "Universidad de Málaga - 2023"
+        "title": "Terapia de Colocación en 3 Partes",
+        "description": "Carmenza con Tachín-Tachán (2023)"
       }
     ]
   },
@@ -48,19 +56,34 @@
     "title": "¿Qué servicios ofrezco?",
     "entries": [
       {
-        "title": "Logopedia",
-        "description": "La terapia miofuncional es una disciplina que se encarga de la prevención, diagnóstico y tratamiento de las alteraciones de la motricidad orofacial.",
-        "image": "/service_example.jpg"
+        "title": "🗣️ Logopedia",
+        "description": "La logopedia aborda los problemas de deglución, comunicación, lenguaje, habla y voz. Tratamos trastornos como apraxia, disartria, disfonía, retraso en el lenguaje, problemas de comprensión y trastornos del lenguaje en niños y adultos. También ayudamos a quienes padecen TEA, afasia, Síndrome de Down, disfagia, TDAH o deterioro en la comunicación por envejecimiento.",
+        "image": "/services/logopedia.png"
       },
       {
-        "title": "Atención Temprana",
-        "description": "La atención temprana es un conjunto de intervenciones dirigidas a la población infantil de 0 a 6 años, a la familia y al entorno, que tienen por objetivo dar respuesta a las necesidades transitorias o permanentes que presentan los niños con trastornos en su desarrollo o que tienen el riesgo de padecerlos.",
-        "image": "/service_example.jpg"
+        "title": "🌱 Atención Temprana",
+        "description": "En la atención temprana, apoyamos el desarrollo cognitivo, social, comunicativo, motriz y la autonomía de niños y niñas desde su nacimiento hasta los 6 años. Nuestro enfoque es trabajar junto a las familias en contextos naturales como el hogar, para garantizar un entorno adecuado para su crecimiento.",
+        "image": "/services/atencion-temprana.png"
       },
       {
-        "title": "Terapia Miofuncional",
-        "description": "La logopedia es una disciplina que se encarga de la prevención, evaluación, diagnóstico y tratamiento de los trastornos de la comunicación humana, manifestados a través de patologías y alteraciones en la voz, el habla, el lenguaje (oral, escrito y gestual), la audición y las funciones orofaciales.",
-        "image": "/service_example.jpg"
+        "title": "🤱 Asesorías de lactancia",
+        "description": "Ofrecemos asesoría personalizada sobre lactancia materna, de fórmula o mixta, respondiendo a preguntas sobre agarre, bancos de leche prenatal, dolor, mastitis, grietas, destete o cómo combinar lactancia y trabajo. Estamos aquí para resolver cualquier duda que tengas durante este proceso.",
+        "image": "/services/asesoria-lactancia.png"
+      },
+      {
+        "title": "🍼 Disfagia Neonatal",
+        "description": "Ayudamos a que los bebés prematuros desarrollen la coordinación de succión-deglución-respiración y los reflejos orales necesarios para una alimentación segura. Prevenimos complicaciones como atragantamientos, aspiraciones o aversiones alimentarias, promoviendo un buen desarrollo muscular oral.",
+        "image": "/services/disfagia-neonatal.png"
+      },
+      {
+        "title": "👄 Terapia Miofuncional",
+        "description": "La terapia miofuncional se encarga de tratar disfunciones orofaciales que afectan el habla, la estructura dental y las relaciones maxilares. Ayudamos con la deglución disfuncional y otros problemas que impactan la respiración y la masticación, colaborando también en tratamientos ortodónticos.",
+        "image": "/services/terapia-miofuncional.png"
+      },
+      {
+        "title": "👶 Disfagia Pediátrica",
+        "description": "La disfagia pediátrica es la dificultad para tragar, lo que puede hacer que el paso de alimentos o líquidos al estómago sea más lento o doloroso (odinofagia). En casos graves, puede ser imposible tragar. Ayudamos a mejorar esta función para evitar complicaciones.",
+        "image": "/services/disfagia-pediatrica.png"
       }
     ]
   }

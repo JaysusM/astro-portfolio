@@ -8,7 +8,7 @@ import { profile, education, courses } from "../information.json";
 <Card>
   <div class="card-content">
     <h1 class="card-title">{profile.name}</h1>
-    <p class="card-description no-ellipsis">
+    <p class="card-description">
       {profile.description}
     </p>
     <div class="profile-image-container only-medium-screen">
@@ -31,7 +31,7 @@ import { profile, education, courses } from "../information.json";
           <li>
             <>
               <h4>{item.title}</h4>
-              <p>{item.description}</p>
+              <i>{item.description}</i>
             </>
           </li>
         ))
@@ -44,7 +44,7 @@ import { profile, education, courses } from "../information.json";
           <li>
             <>
               <h4>{item.title}</h4>
-              <p>{item.description}</p>
+              <i>{item.description}</i>
             </>
           </li>
         ))
@@ -78,7 +78,7 @@ import { profile, education, courses } from "../information.json";
     min-height: 65%;
     margin: 0.5rem auto 0 auto;
   }
-  p:not(.no-ellipsis) {
+  i {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
